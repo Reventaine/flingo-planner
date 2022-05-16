@@ -2,19 +2,19 @@
 {% load static %}
 
 {% block content %}
-
+<div id="main">
     <header class="major">
-        <h2><center>Topics</center></h2>
+        <h2>Блог</h2>
     </header>
 
     <ul>
         {% for topic in topics %}
-        <li><h1><a href="{% url 'planner:topic' topic.id %}">{{ topic }}</h1></li>
+        <li><h4><a href="{% url 'planner:topic' topic.id %}">{{ topic }}</h4></li>
         {% empty %}
-     <li>No topics have been added yet.</li>
+        <li>No topics have been added yet.</li>
         {% endfor %}
     </ul>
 
-<a href="{% url 'planner:new_topic' %}">Add a new topic</a>
+        <h5><a href="{% url 'planner:new_topic' %}">Начать новую тему</a></h5>
 
 {% endblock content %}

@@ -2,26 +2,23 @@
 {% load static %}
 
 {% block content %}
-    <header class="major">
-        <h2><center><p>Topic: {{ topic }}</p></center></h2>
-        <p>Entries:</p>
-        <p>
-            <a href="{% url 'planner:new_entry' topic.id %}">Add new entry</a>
-        </p>
-    </header>
 
-<ul>
-{% for entry in entries %}
-    <li>
-        <p><h1>{{ entry.date_added|date:'M d, Y H:i' }}</h1></p>
-        <p>{{ entry.text|linebreaks }}</p>
-        <p>
-          <a href="{% url 'planner:edit_entry' entry.id %}"><h1>Edit entry</h1></a>
-        </p>
- </li>
-{% empty %}
- <li>There are no entries for this topic yet.</li>
- {% endfor %}
- </ul>
+<div id="main">
+
+<h3>Тема: {{ topic }}</h3>
+
+    <ul>
+    {% for entry in entries %}
+        <li>
+            <h4>{{ entry.date_added|date:'M d, Y H:i' }}</h4>
+            <h5>{{ entry.text|linebreaks }}</h5>
+            <a href="{% url 'planner:edit_entry' entry.id %}"><h6>Edit entry</h6></a>
+        </li>
+        {% empty %}
+         <li>There are no entries for this topic yet.</li>
+         {% endfor %}
+    </ul>
+
+<a href="{% url 'planner:new_entry' topic.id %}">Добавить заметку</a>
 
 {% endblock content %}

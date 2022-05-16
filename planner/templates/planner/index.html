@@ -2,13 +2,49 @@
 {% load static %}
 {% block content %}
 
-<!-- Two -->
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<a href="{% url 'planner:index' %}" class="image avatar"><img src="{% static 'planner/images/avatar.jpg' %}" alt="" /></a>
+					<h1><strong>Hello, my name is Alyona!</strong><br />It's really nice to see you here today!<br />
+					</h1>
+					<p></p>
+					<a href="{% url 'planner:index' %}"><h3>Главная</h3></a>
+						<nav id="nav">
+							<ul>
+								<li><a href="#one" class="active">О планере Flingo</a></li>
+								<li><a href="#two">Что я умею</a></li>
+								<li><a href="#three">Связаться со мной</a></li>
+							</ul>
+						</nav>
+					<a href="{% url 'planner:topics' %}"><h3>Мой блог</h3></a>
+				</div>
+			</header>
+
+<!-- Main -->
+
+			<div id="main">
+
+				<!-- One -->
+					<section id="one">
+						<header class="major">
+							<h2>О планере Flingo</h2>
+						</header>
+						<p> Что такое планер по английскому языку?<br />
+							Я бы назвала его интерактивной тетрадью, где хранится список источников и материалов, которые вы используете в изучении английского языка и, конечно же, ваш план занятий на полгода/месяц/неделю.<br />
+							Вы сможете отмечать проделанную работу каждый день! Ведь главная цель планера - научить вас заниматься регулярно.<br />
+							Кроме того, эта необычная тетрадь содержит в себе разделы для записи тематических слов, практики письма и чтения.<br />
+							Планер можно брать с собой повсюду - в дорогу, на занятия - ведь вы также можете записывать грамматические правила и все, что пожелаете.
+						</p>
+					</section>
+
+				<!-- Two -->
 					<section id="two">
-						<h2>My functions</h2>
+						<h2>Что я умею</h2>
 						<div class="row">
 							<article class="col-6 col-12-xsmall work-item">
 								<a href="{% static 'planner/images/fulls/01.jpg' %}" class="image fit thumb"><img src="{% static 'planner/images/thumbs/01.jpg' %}" alt="" /></a>
-								<h3>My parameters</h3>
+								<h3>Мои параметры</h3>
 										<ul>
 											<li>Размер - А5 (148*210 мм)</li>
 											<li>Бумага - плотная (120 гр/м.кв.), матовая, мелованная</li>
@@ -81,8 +117,8 @@
 
 				<!-- Three -->
 					<section id="three">
-						<h2>Get In Touch</h2>
-						<p>You can always ask me some questions about planner, order some<br /> and you even can get an english lessons from me</p>
+						<h2>Связаться со мной</h2>
+						<p>You can always ask me some questions about planner, order some<br /> and you can even get an english lessons from me</p>
 						<div class="row">
 							<div class="col-4 col-12-small">
 								<ul class="labeled-icons">

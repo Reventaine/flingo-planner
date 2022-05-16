@@ -1,7 +1,7 @@
 {% extends "planner/base.html" %}
 
 {% block content %}
-
+<div id="main">
 {% if form.errors %}
  <p>Your username and password didn't match. Please try again.</p>
  {% endif %}
@@ -14,5 +14,6 @@
  <input type="hidden" name="next"
  value="{% url 'planner:index' %}" />
  </form>
+ <a href="{% url 'users:register' %}"><button name="submit">Register</button></a>
 
 {% endblock content %}

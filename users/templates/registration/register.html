@@ -1,5 +1,6 @@
 {% extends "planner/base.html" %}
 {% block content %}
+<div id="main">
  <form method="post" action="{% url 'users:register' %}">
  {% csrf_token %}
  {{ form.as_p }}

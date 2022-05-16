@@ -1,12 +1,13 @@
 {% extends "planner/base.html" %}
 
 {% block content %}
- <p>Add a new topic:</p>
+<div id="main">
+ <h3>Новая запись в блог:<?h2>
 
- <form action=""{% url 'planner:new_topic' %}" method='post'>
+ <form action="{% url 'planner:new_topic' %}" method='post'">
      {% csrf_token %}
      {{ form.as_p }}
-     <button name="submit">Add topic</button>
+     <button name="submit">Добавить запись</button>
  </form>
 
 {% endblock content %}
