@@ -1,0 +1,59 @@
+{% load static %}
+
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Flingo Planner</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'planner/assets/css/main.css' %}" />
+
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<a href="#" class="image avatar"><img src="{% static 'planner/images/avatar.jpg' %}" alt="" /></a>
+					<h1><strong>Hello, my name is Alyona!</strong><br /> It's really nice to see you here today!<br />
+					</h1>
+				</div>
+			</header>
+
+				<!-- Main -->
+			<div id="main">
+
+				<!-- One -->
+					<section id="one">
+						<header class="major">
+							<h2>About Flingo</h2>
+						</header>
+						<p> Что такое планер по английскому языку?<br />
+							Я бы назвала его интерактивной тетрадью, где хранится список источников и материалов, которые вы используете в изучении английского языка и, конечно же, ваш план занятий на полгода/месяц/неделю.<br />
+							Вы сможете отмечать проделанную работу каждый день! Ведь главная цель планера - научить вас заниматься регулярно.<br />
+							Кроме того, эта необычная тетрадь содержит в себе разделы для записи тематических слов, практики письма и чтения.<br />
+							Планер можно брать с собой повсюду - в дорогу, на занятия - ведь вы также можете записывать грамматические правила и все, что пожелаете
+						</p>
+					</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<ul class="copyright">
+						<li>&copy; by Sergey Ugryumov</li><li>Email: ugrumov.s.s@gmail.com</li><br /><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="{% static 'planner/assets/js/jquery.min.js' %}"></script>
+			<script src="{% static 'planner/assets/js/jquery.poptrox.min.js' %}"></script>
+			<script src="{% static 'planner/assets/js/browser.min.js' %}"></script>
+			<script src="{% static 'planner/assets/js/breakpoints.min.js' %}"></script>
+			<script src="{% static 'planner/assets/js/util.js' %}"></script>
+			<script src="{% static 'planner/assets/js/main.js' %}"></script>
+
+	</body>
+</html>
+{% block content %}{% endblock content %}

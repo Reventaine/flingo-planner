@@ -1,0 +1,61 @@
+{% load static %}
+
+<!DOCTYPE HTML>
+
+<html>
+	<head><a href="{% url 'planner:index' %}">Planner for Alyona by Me</a>
+		<p>{% if user.is_authenticated %}
+		Hello, {{ user.username }}.
+			<p><a href="{% url 'users:logout' %}">Log out</a></p>
+		{% else %}
+			<a href="{% url 'users:register' %}">Register</a>
+			<p><a href="{% url 'users:login' %}">Log in</a></p>
+ 		{% endif %}</p>
+		</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="{% static 'planner/main.css' %}">
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<section id="header">
+				<header>
+					<span class="image avatar"><img src="{% static 'planner/images/avatar.jpg' %}" alt="" /></span>
+					<h1 id="logo"><a href="https://vk.com/id142455096">Sergey U</a></h1>
+					<p>I`ve got nothing to do so I did this</p>
+				</header>
+				<nav id="nav">
+					<ul>
+						<li><a href="{% url 'planner:topics' %}"class="active">Plan something!</a></li>
+						<li><a href="#two">Things I Can Do</a></li>
+						<li><a href="https://vk.com/alenaa_kom">Contact Alyona</a></li>
+					</ul>
+				</nav>
+			</section>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- One -->
+							<section id="one">
+								<div class="image main" data-position="center">
+									<img src="{% static 'planner/images/banner.jpg' %}" alt="" />
+								</div>
+
+
+		<!-- Scripts -->
+			<script src="{% static 'planner/assets/js/jquery.min.js' %}"></script>
+			<script src="{% static 'planner/assets/js/jquery.scrollex.min.js' %}"></script>
+			<script src="{% static 'planner/assets/js/jquery.scrolly.min.js' %}"></script>
+			<script src="{% static 'planner/assets/js/browser.min.js' %}"></script>
+			<script src="{% static 'planner/assets/js/breakpoints.min.js' %}"></script>
+			<script src="{% static 'planner/assets/js/util.js' %}"></script>
+			<script src="{% static 'planner/assets/js/main.js' %}"></script>
+
+	</body>
+</html>
+{% block content %}{% endblock content %}
