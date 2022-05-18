@@ -16,7 +16,7 @@
                     <h4 align="center">{{ entry.date_added|date:'M d, Y H:i' }}</h4>
                     <a href="{% url 'planner:edit_entry' entry.id %}"><h6 align="right">Edit entry</h6></a>
                     {% if entry.image %}
-                    <a href="{{ entry.image.url }}" class="image blog thumb"><img src="{{ entry.image.url }}" alt="" /></a>
+                    <a href="{{ entry.image.url }}" class="image fit thumb"><img src="{{ entry.image.url }}" alt="" /></a>
                     {% endif %}
                     <h4>{{ entry.text|linebreaks }}</h4>
                 {% empty %}
