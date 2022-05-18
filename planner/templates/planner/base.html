@@ -18,7 +18,7 @@
 			<header id="header">
 				<div class="inner">
 					<a href="{% url 'planner:index' %}" class="image avatar"><img src="{% static 'planner/images/avatar.jpg' %}" alt="" /></a>
-					<h1><strong>Hello, my name is Alyona!</strong><br />It's really nice to see you here today!<br />
+					<h1><strong>Hello, my name is Alyona!</strong><br /> It's really nice to see you here today! <br />
 					</h1>
 					<p></p>
 					<a href="{% url 'planner:index' %}"><h3>Главная</h3></a>
@@ -32,9 +32,7 @@
 					<a href="{% url 'planner:topics' %}"><h3>Мой блог</h3></a>
 				</div>
 			</header>
-
-	</body>
-	
+		{% block content %}{% endblock content %}
 			<footer id="footer">
 				<div class="inner">
 					<ul class="copyright">
@@ -42,6 +40,8 @@
 					</ul>
 				</div>
 			</footer>
+
+	</body>
 
 		<!-- Scripts -->
 			<script src="{% static 'planner/assets/js/jquery.min.js' %}"></script>
@@ -52,4 +52,4 @@
 			<script src="{% static 'planner/assets/js/main.js' %}"></script>
 
 </html>
-{% block content %}{% endblock content %}
+

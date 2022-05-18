@@ -11,7 +11,8 @@ class Topic(models.Model):
 
 class Entry(models.Model):
     topic = models.ForeignKey(Topic, on_delete=models.CASCADE)
-    text = models.TextField()
+    image = models.ImageField(upload_to='uploads/', null=True, blank=True, default=None)
+    text = models.TextField(null=True, default=None)
     date_added = models.DateTimeField(auto_now_add=True)
     class Meta:
         verbose_name_plural = 'entries'
