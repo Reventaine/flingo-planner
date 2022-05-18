@@ -3,7 +3,7 @@
 {% block content %}
 <div id="main">
  <p><a href="{% url 'planner:topic' topic.id %}">{{ topic }}</a></p>
- <form action="{% url 'planner:new_entry' topic.id %}" method='post'>
+ <form action="{% url 'planner:new_entry' topic.id %}" method='post' enctype="multipart/form-data">
      {% csrf_token %}
      {{ form.as_p }}
      <button name='submit'>Add entry</button>

@@ -1,6 +1,8 @@
 from django.urls import path
 
 from . import views
+from django.conf.urls.static import static
+from django.conf import settings
 
 app_name = 'planner'
 urlpatterns = [
@@ -10,4 +12,4 @@ urlpatterns = [
     path('new_topic/', views.new_topic, name='new_topic'),
     path('new_entry/<int:topic_id>/', views.new_entry, name='new_entry'),
     path('edit_entry/<int:entry_id>/', views.edit_entry, name='edit_entry'),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

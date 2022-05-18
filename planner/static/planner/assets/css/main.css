@@ -2129,6 +2129,12 @@ input, select, textarea {
 			width: 100%;
 		}
 
+        .image.blog {
+              display: block;
+              width: 200px;
+              height: auto;
+        }
+
 			.image.fit img {
 				width: 100%;
 			}
