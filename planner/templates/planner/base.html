@@ -13,7 +13,6 @@
 	</head>
 
 	<body class="is-preload">
-
 		<!-- Header -->
 			<header id="header">
 				<div class="inner">
@@ -22,17 +21,12 @@
 					</h1>
 					<p></p>
 					<a href="{% url 'planner:index' %}"><h3>Главная</h3></a>
-						<nav id="nav">
-							<ul>
-								<li><a href="#one" class="active">О планере Flingo</a></li>
-								<li><a href="#two">Что я умею</a></li>
-								<li><a href="#three">Связаться со мной</a></li>
-							</ul>
-						</nav>
 					<a href="{% url 'planner:topics' %}"><h3>Мой блог</h3></a>
 				</div>
 			</header>
+
 		{% block content %}{% endblock content %}
+
 			<footer id="footer">
 				<div class="inner">
 					<ul class="copyright">
