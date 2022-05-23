@@ -16,6 +16,7 @@
         {% endfor %}
     </ul>
 
+    {% if request.user.is_authenticated %}
         <h5><a href="{% url 'planner:new_topic' %}">Начать новую тему</a></h5>
-
+    {% endif %}
 {% endblock content %}

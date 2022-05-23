@@ -5,23 +5,25 @@
 
 <div id="main">
 
-<h3 align="center">Тема: {{ topic }}</h3>
+<h3 align="left">Тема: {{ topic }}</h3>
 
+{% if request.user.is_authenticated %}
     <a href="{% url 'planner:new_entry' topic.id %}">Добавить заметку</a>
+{% endif %}
 
 <p></p>
-
+  
         <article class="col-6 col-12-xsmall work-item">
             {% for entry in entries %}
                     <h4 align="center">{{ entry.date_added|date:'M d, Y H:i' }}</h4>
-                    <a href="{% url 'planner:edit_entry' entry.id %}"><h6 align="right">Edit entry</h6></a>
+                    <a href="{% url 'planner:edit_entry' entry.id %}">{% if request.user.is_authenticated %}<h6 align="right">Edit entry</h6>{% endif %}</a>
                     {% if entry.image %}
                     <a href="{{ entry.image.url }}" class="image fit thumb"><img src="{{ entry.image.url }}" alt="" /></a>
                     {% endif %}
                     <h4>{{ entry.text|linebreaks }}</h4>
-                {% empty %}
+            {% empty %}
                  <li>There are no entries for this topic yet.</li>
-                 {% endfor %}
+            {% endfor %}
         </article>
 
 
