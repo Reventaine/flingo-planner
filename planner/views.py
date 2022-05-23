@@ -15,7 +15,7 @@ def topics(request):
 
 def topic(request, topic_id):
     topic = Topic.objects.get(id=topic_id)
-    entries = Topic.entry_set.order_by('-date_added')
+    entries = topic.entry_set.order_by('-date_added')
     context = {'topic': topic, 'entries': entries}
     return render(request, 'planner/topic.html', context)
 
