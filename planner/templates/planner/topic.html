@@ -8,7 +8,7 @@
 <h3 align="left">Тема: {{ topic }}</h3>
 
 {% if request.user.is_authenticated %}
-    <a href="{% url 'planner:new_entry' topic.id %}">Добавить заметку</a>
+    <a href="{% url 'planner:new_entry' topic.id %}"><li>Добавить запись</li></a>
 {% endif %}
 
 <p></p>
@@ -22,8 +22,11 @@
                     {% endif %}
                     <h4>{{ entry.text|linebreaks }}</h4>
             {% empty %}
-                 <li>There are no entries for this topic yet.</li>
+                 <li>В этой теме еще нет ни одной записи!</li>
             {% endfor %}
+            {% if request.user.is_authenticated %}
+            <a href="{% url 'planner:delete_topic' topic.id %}"><button name="submit">Удалить тему</button></a>
+            {% endif%}
         </article>
 
 

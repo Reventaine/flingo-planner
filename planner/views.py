@@ -30,7 +30,7 @@ def new_topic(request):
             new_topic.owner = request.user
             new_topic.save()
             return redirect('planner:topics')
-    context = {'form':form}
+    context = {'form': form}
     return render(request, 'planner/new_topic.html', context)
 
 @login_required
@@ -65,3 +65,24 @@ def edit_entry(request, entry_id):
             return redirect('planner:topic', topic_id=topic.id)
     context = {'entry': entry, 'topic': topic, 'form': form}
     return render(request, 'planner/edit_entry.html', context)
+
+@login_required
+def delete_entry(entry_id):
+    post_to_delete = Entry.objects.get(id=entry_id)
+    topic = post_to_delete.topic
+    post_to_delete.delete()
+    return redirect('planner:topic', topic_id=topic.id)
+
+@login_required
+def delete_topic(request, topic_id):
+    topic_to_delete = Topic.objects.get(id=topic_id)
+    topic_to_delete.delete()
+    topics = Topic.objects.order_by('date_added')
+    context = {'topics': topics}
+    return render(request, 'planner/topics.html', context)
+
+
+
+
+
+

@@ -2,12 +2,12 @@
 
 {% block content %}
 <div id="main">
- <h3>Новая запись в блог:<?h2>
+ <h3>Новая тема:<?h2>
 
  <form action="{% url 'planner:new_topic' %}" method='post'">
      {% csrf_token %}
      {{ form.as_p }}
-     <button name="submit">Добавить запись</button>
+     <button name="submit">Добавить тему в блог</button>
  </form>
 
 {% endblock content %}
