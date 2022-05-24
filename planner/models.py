@@ -16,7 +16,7 @@ class Topic(models.Model):
 class Entry(models.Model):
 
     topic = models.ForeignKey(Topic, on_delete=models.CASCADE)
-    image = models.ImageField(null=True, blank=True, default=None)
+    image = models.ImageField(null=True, blank=True, default='01.jpeg')
     text = models.TextField(null=True, default=None)
     date_added = models.DateTimeField(auto_now_add=True)
 
@@ -25,10 +25,10 @@ class Entry(models.Model):
     def __str__(self):
         return f"{self.text[:50]}..."
 
-    #def save(self):
-     #   if not self.id:
-      #      self.image = self.compressImage(self.image)
-       # super(Entry, self).save()
+    def save(self):
+        if not self.id:
+            self.image = self.compressImage(self.image)
+        super(Entry, self).save()
 
     def compressImage(self, image):
 
