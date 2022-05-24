@@ -30,7 +30,7 @@ def new_topic(request):
             new_topic.owner = request.user
             new_topic.save()
             return redirect('planner:topics')
-    context = {'form': form}
+    context = {'form':form}
     return render(request, 'planner/new_topic.html', context)
 
 @login_required
@@ -41,7 +41,7 @@ def new_entry(request, topic_id):
     if request.method != 'POST':
         form = EntryForm()
     else:
-        form = EntryForm(request.POST, request.FILES)
+        form = EntryForm(request.POST, request.FILES or None)
         if form.is_valid():
             new_entry = form.save(commit=False)
             new_entry.topic = topic
@@ -67,11 +67,13 @@ def edit_entry(request, entry_id):
     return render(request, 'planner/edit_entry.html', context)
 
 @login_required
-def delete_entry(entry_id):
+def delete_entry(request, entry_id):
     post_to_delete = Entry.objects.get(id=entry_id)
     topic = post_to_delete.topic
     post_to_delete.delete()
-    return redirect('planner:topic', topic_id=topic.id)
+    entries = topic.entry_set.order_by('-date_added')
+    context = {'topic': topic, 'entries': entries}
+    return render(request, 'planner/topic.html', context)
 
 @login_required
 def delete_topic(request, topic_id):
@@ -80,8 +82,6 @@ def delete_topic(request, topic_id):
     topics = Topic.objects.order_by('date_added')
     context = {'topics': topics}
     return render(request, 'planner/topics.html', context)
-
-
 
 
 

@@ -25,10 +25,11 @@ class Entry(models.Model):
     def __str__(self):
         return f"{self.text[:50]}..."
 
-    def save(self):
-        if not self.id:
-            self.image = self.compressImage(self.image)
-        super(Entry, self).save()
+    #def save(self):
+     #   if not self.id:
+      #      self.image = self.compressImage(self.image)
+       # super(Entry, self).save()
+
     def compressImage(self, image):
 
         img = Image.open(image).convert("RGB")

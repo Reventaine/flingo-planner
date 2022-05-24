@@ -10,7 +10,7 @@
   {% csrf_token %}
   {{ form.as_p }}
   <button name="submit">Save changes</button>
-   <a href="{% url 'planner:delete_entry' entry.id %}"><button name="submit">Delete post</button></a>
+   <a href="{% url 'planner:delete_entry' entry.id %}">Delete post</a>
  </form>
 
 {% endblock content %}
