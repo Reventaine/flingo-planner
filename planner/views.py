@@ -59,7 +59,7 @@ def edit_entry(request, entry_id):
     if request.method != 'POST':
         form = EntryForm(instance=entry)
     else:
-        form = EntryForm(instance=entry, data=request.POST)
+        form = EntryForm(request.POST, request.FILES or None, instance=entry)
         if form.is_valid():
             form.save()
             return redirect('planner:topic', topic_id=topic.id)
