@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-h=dvc+gbb-9#&d63-@*l%fe=(8=7(t^6s5li)svoay_7fvb!@='
+SECRET_KEY = 'SECRET'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -129,7 +129,7 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_FILE_STORAGE = 'storages.backends.dropbox.DropBoxStorage'
-DROPBOX_OAUTH2_TOKEN = 'sl.BJTwrXa6V-JdiGe9zfKurHN7tmBNsI9EpbabWIy9jx_VolIae9d30M0foX0M6AAkh8C61jjrukG_ktuJsh5fbfHmHJAUn2x_WVLM9YbxnFlqeiVKX4xbNEaQvc4KSGeWZ5tSvLU'
+DROPBOX_OAUTH2_TOKEN = "TOKEN"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
